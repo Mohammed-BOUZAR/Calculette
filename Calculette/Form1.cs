@@ -13,16 +13,22 @@ namespace Calculette
 {
     public partial class Form1 : Form
     {
-        String op;
+        string op;
         float num;
-        String num1;
+        string exp;
 
         public Form1()
         {
             InitializeComponent();
-            op = "";
+            op = string.Empty;
             num = 0;
-            num1 = "";
+            exp = string.Empty;
+        }
+
+        private void btnOne_Click(object sender, EventArgs e)
+        {
+            textInput.Text += "1";
+            lblRs.Text = textInput.Text;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -30,236 +36,344 @@ namespace Calculette
 
         }
 
+        private void btnTwo_Click(object sender, EventArgs e)
+        {
+            textInput.Text += "2";
+            lblRs.Text = textInput.Text;
+        }
+
+        private void btnThree_Click(object sender, EventArgs e)
+        {
+            textInput.Text += "3";
+            lblRs.Text = textInput.Text;
+        }
+
+        private void btnFour_Click(object sender, EventArgs e)
+        {
+            textInput.Text += "4";
+            lblRs.Text = textInput.Text;
+        }
+
+        private void btnFive_Click(object sender, EventArgs e)
+        {
+            textInput.Text += "5";
+            lblRs.Text = textInput.Text;
+        }
+
+        private void btnSix_Click(object sender, EventArgs e)
+        {
+            textInput.Text += "6";
+            lblRs.Text = textInput.Text;
+        }
+
+        private void btnSeven_Click(object sender, EventArgs e)
+        {
+            textInput.Text += "7";
+            lblRs.Text = textInput.Text;
+        }
+
+        private void btnEight_Click(object sender, EventArgs e)
+        {
+            textInput.Text += "8";
+            lblRs.Text = textInput.Text;
+        }
+
+        private void btnNine_Click(object sender, EventArgs e)
+        {
+            textInput.Text += "9";
+            lblRs.Text = textInput.Text;
+        }
+
+        private void btnZero_Click(object sender, EventArgs e)
+        {
+            textInput.Text += "0";
+            lblRs.Text = textInput.Text;
+        }
+
+        private void btnDot_Click(object sender, EventArgs e)
+        {
+            textInput.Text += ".";
+            lblRs.Text = textInput.Text;
+        }
+
+        private void btnEqual_Click(object sender, EventArgs e)
+        {
+            if( op == "+")
+            {
+                num += float.Parse(textInput.Text);
+                textInput.Text = string.Empty;
+            }
+            if (op == "/")
+            {
+                num /= float.Parse(textInput.Text);
+                textInput.Text = string.Empty;
+            }
+            if (op == "*")
+            {
+                num *= float.Parse(textInput.Text);
+                textInput.Text = string.Empty;
+            }
+            if (op == "-")
+            {
+                num -= float.Parse(textInput.Text);
+                textInput.Text = string.Empty;
+            }
+
+            lblRs.Text = num.ToString();
+            op = string.Empty;
+        }
+
+        private void btnCE_Click(object sender, EventArgs e)
+        {
+            textInput.Text = String.Empty;
+            lblRs.Text = String.Empty;
+            num = 0;
+        }
+
+        private void btnDel_Click(object sender, EventArgs e)
+        {
+            //textInput.Focus();
+            textInput.Text = textInput.Text.Remove(textInput.Text.Length-1,1);
+            lblRs.Text = lblRs.Text.Remove(lblRs.Text.Length-1,1);
+        }
+
+        private void btnPlus_Click(object sender, EventArgs e)
+        {
+            //textInput.Text += "+";
+            if (op == "+")
+            {
+                num += float.Parse(textInput.Text);
+                textInput.Text = string.Empty;
+            }
+            if (op == "/")
+            {
+                num /= float.Parse(textInput.Text);
+                textInput.Text = string.Empty;
+            }
+            if (op == "*")
+            {
+                num *= float.Parse(textInput.Text);
+                textInput.Text = string.Empty;
+            }
+            if (op == "-")
+            {
+                num -= float.Parse(textInput.Text);
+                textInput.Text = string.Empty;
+            }
+            if (op == String.Empty)
+                num = float.Parse(textInput.Text);
+            op = "+";
+            textInput.Text = String.Empty;
+            lblRs.Text = num.ToString();
+        }
+
+        private void btnMinus_Click(object sender, EventArgs e)
+        {
+            //textInput.Text += "-";
+            if (op == "+")
+            {
+                num += float.Parse(textInput.Text);
+                textInput.Text = string.Empty;
+            }
+            if (op == "/")
+            {
+                num /= float.Parse(textInput.Text);
+                textInput.Text = string.Empty;
+            }
+            if (op == "*")
+            {
+                num *= float.Parse(textInput.Text);
+                textInput.Text = string.Empty;
+            }
+            if (op == "-")
+            {
+                num -= float.Parse(textInput.Text);
+                textInput.Text = string.Empty;
+            }
+            if (op == String.Empty)
+                num = float.Parse(textInput.Text);
+            op = "-";
+            textInput.Text = String.Empty;
+            lblRs.Text = num.ToString();
+        }
+
+        private void btnMult_Click(object sender, EventArgs e)
+        {
+            //textInput.Text += "*";
+            if (op == "+")
+            {
+                num += float.Parse(textInput.Text);
+                textInput.Text = string.Empty;
+            }
+            if (op == "/")
+            {
+                num /= float.Parse(textInput.Text);
+                textInput.Text = string.Empty;
+            }
+            if (op == "*")
+            {
+                num *= float.Parse(textInput.Text);
+                textInput.Text = string.Empty;
+            }
+            if (op == "-")
+            {
+                num -= float.Parse(textInput.Text);
+                textInput.Text = string.Empty;
+            }
+            if (op == String.Empty)
+                num = float.Parse(textInput.Text);
+            op = "*";
+            textInput.Text = String.Empty;
+            lblRs.Text = num.ToString();
+        }
+
+        private void btnSub_Click(object sender, EventArgs e)
+        {
+            //textInput.Text += "/";
+            if (op == "+")
+            {
+                num += float.Parse(textInput.Text);
+                textInput.Text = string.Empty;
+            }
+            if (op == "/")
+            {
+                num /= float.Parse(textInput.Text);
+                textInput.Text = string.Empty;
+            }
+            if (op == "*")
+            {
+                num *= float.Parse(textInput.Text);
+                textInput.Text = string.Empty;
+            }
+            if (op == "-")
+            {
+                num -= float.Parse(textInput.Text);
+                textInput.Text = string.Empty;
+            }
+            if (op == String.Empty)
+                num = float.Parse(textInput.Text);
+            op = "/";
+            textInput.Text = String.Empty;
+            lblRs.Text = num.ToString();
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
-            if (!(textbox.Text == null))
+            Dispose();
+        }
+
+        private void Form1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            textInput.Focus();
+            if (e.KeyChar == (char)Keys.Back)
             {
-                if (op != "")
-                {
-                    if (op == "+")
-                        num += int.Parse(num1);
-                    if (op == "-")
-                        num -= int.Parse(num1);
-                    if (op == "/")
-                        num /= int.Parse(num1);
-                    if (op == "*")
-                        num *= int.Parse(num1);
-                }
-                else
-                    num += int.Parse(num1);
+                textInput.Text = textInput.Text.Remove(textInput.Text.Length - 1, 1);
+                lblRs.Text = lblRs.Text.Remove(lblRs.Text.Length - 1, 1);
+            }
+            
+            if (e.KeyChar == '1')
+            {
+                lblRs.Text += '1';
+            }
+            if (e.KeyChar == '2')
+            {
+                lblRs.Text += '2';
+            }
+            if (e.KeyChar == '3')
+            {
+                lblRs.Text += '3';
+            }
+            if (e.KeyChar == '4')
+            {
+                lblRs.Text += '4';
+            }
+            if (e.KeyChar == '5')
+            {
+                lblRs.Text += '5';
+            }
+            if (e.KeyChar == '6')
+            {
+                lblRs.Text += '6';
+            }
+            if (e.KeyChar == '7')
+            {
+                lblRs.Text += '7';
+            }
+            if (e.KeyChar == '8')
+            {
+                lblRs.Text += '8';
+            }
+            if (e.KeyChar == '9')
+            {
+                lblRs.Text += '9';
+            }
+            if (e.KeyChar == '0')
+            {
+                lblRs.Text += '0';
+            }
+            if (e.KeyChar == '.')
+            {
+                lblRs.Text += '.';
+            }
+
+            if (e.KeyChar == '+')
+            {
+                num += float.Parse(textInput.Text);
+                textInput.Text = string.Empty;
+                lblRs.Text = string.Empty;
+                e.Handled = true;
                 op = "+";
-                textbox2.Text = (num).ToString();
-                num1 = "";
-                textbox.Text += "+";
             }
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-            num1 += "1";
-            if (textbox.Text == null)
-                textbox.Text = "1";
-            else
-                textbox.Text += "1";
-        }
-
-        private void button6_Click(object sender, EventArgs e)
-        {
-            num1 += "2";
-            if (textbox.Text == null)
-                textbox.Text = "2";
-            else
-                textbox.Text += "2";
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            if (num1 != "")
+            if (e.KeyChar == '-')
             {
-                if (op != "")
-                {
-                    if (op == "+")
-                        num += int.Parse(num1);
-                    if (op == "-")
-                        num -= int.Parse(num1);
-                    if (op == "/")
-                        num /= int.Parse(num1);
-                    if (op == "*")
-                        num *= int.Parse(num1);
-                }
-                else
-                    num /= int.Parse(num1);
-                op = "/";
-                textbox2.Text = (num).ToString();
-                num1 = "";
-                textbox.Text += "/";
-            }
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            if (num1 != "")
-            {
-                if (op != "")
-                {
-                    if (op == "+")
-                        num += int.Parse(num1);
-                    if (op == "-")
-                        num -= int.Parse(num1);
-                    if (op == "/")
-                        num /= int.Parse(num1);
-                    if (op == "*")
-                        num *= int.Parse(num1);
-                }
-                else
-                    num *= int.Parse(num1);
-                op = "*";
-                textbox2.Text = (num).ToString();
-                num1 = "";
-                textbox.Text += "x";
-            }
-        }
-
-        private void button16_Click(object sender, EventArgs e)
-        {
-            if (num1 != "")
-            {
-                if (op != "")
-                {
-                    if (op == "+")
-                        num += int.Parse(num1);
-                    if (op == "-")
-                        num -= int.Parse(num1);
-                    if (op == "/")
-                        num /= int.Parse(num1);
-                    if (op == "*")
-                        num *= int.Parse(num1);
-                }
-                else
-                    num = int.Parse(num1);
+                num -= float.Parse(textInput.Text);
+                textInput.Text = string.Empty;
+                lblRs.Text = num.ToString();
+                e.Handled = true;
                 op = "-";
-                textbox2.Text = (num).ToString();
-                num1 = "";
-                textbox.Text += "-";
             }
-        }
-
-        private void button7_Click(object sender, EventArgs e)
-        {
-            num1 += "3";
-            if (textbox.Text == null)
-                textbox.Text = "3";
-            else
-                textbox.Text += "3";
-        }
-
-        private void button8_Click(object sender, EventArgs e)
-        {
-            num1 += "4";
-            if (textbox.Text == null)
-                textbox.Text = "4";
-            else
-                textbox.Text += "4";
-        }
-
-        private void button9_Click(object sender, EventArgs e)
-        {
-            num1 += "5";
-            if (textbox.Text == null)
-                textbox.Text = "5";
-            else
-                textbox.Text += "5";
-        }
-
-        private void button10_Click(object sender, EventArgs e)
-        {
-            num1 += "6";
-            if (textbox.Text == null)
-                textbox.Text = "6";
-            else
-                textbox.Text += "6";
-        }
-
-        private void button11_Click(object sender, EventArgs e)
-        {
-            num1 += "7";
-            if (textbox.Text == null)
-                textbox.Text = "7";
-            else
-                textbox.Text += "7";
-        }
-
-        private void button12_Click(object sender, EventArgs e)
-        {
-            num1 += "8";
-            if (textbox.Text == null)
-                textbox.Text = "8";
-            else
-                textbox.Text += "8";
-        }
-
-        private void button13_Click(object sender, EventArgs e)
-        {
-            num1 += "9";
-            if (textbox.Text == null)
-                textbox.Text = "9";
-            else
-                textbox.Text += "9";
-        }
-
-        private void button14_Click(object sender, EventArgs e)
-        {
-            num1 += "0";
-            if (textbox.Text == null)
-                textbox.Text = "0";
-            else
-                textbox.Text += "0";
-        }
-
-        private void button15_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            textbox.Text = "";
-            textbox2.Text = "";
-            num = 0;
-            num1 = "";
-        }
-
-        private void textBox1_TextChanged_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button17_Click(object sender, EventArgs e)
-        {
-            
-                if (op != "")
+            if (e.KeyChar == '*')
+            {
+                num *= float.Parse(textInput.Text);
+                textInput.Text = string.Empty;
+                lblRs.Text = string.Empty;
+                e.Handled = true;
+                op = "*";
+            }
+            if (e.KeyChar == '/')
+            {
+                num /= float.Parse(textInput.Text);
+                textInput.Text = string.Empty;
+                lblRs.Text = string.Empty;
+                e.Handled = true;
+                op = "/";
+            }
+            if (e.KeyChar == '=')
+            {
+                if (op == "+")
                 {
-                    if (op == "+")
-                        num += int.Parse(num1);
-                    if (op == "-")
-                        num -= int.Parse(num1);
-                    if (op == "/")
-                        num /= int.Parse(num1);
-                    if (op == "*")
-                        num *= int.Parse(num1);
+                    num += float.Parse(textInput.Text);
+                    textInput.Text = string.Empty;
                 }
-                else
-                    num = int.Parse(num1);
-                textbox2.Text = (num).ToString();
-                textbox.Text = (num).ToString();
-                num1 = (num).ToString();
-                op = "";
-            
+                if (op == "/")
+                {
+                    num /= float.Parse(textInput.Text);
+                    textInput.Text = string.Empty;
+                }
+                if (op == "*")
+                {
+                    num *= float.Parse(textInput.Text);
+                    textInput.Text = string.Empty;
+                }
+                if (op == "-")
+                {
+                    num -= float.Parse(textInput.Text);
+                    textInput.Text = string.Empty;
+                }
+
+                lblRs.Text = num.ToString();
+                e.Handled = true;
+            }
         }
     }
 }
